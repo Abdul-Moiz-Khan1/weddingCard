@@ -1,137 +1,147 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Areej & Usman Wedding</title>
-    <!-- Google Fonts for typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-  </head>
-  <!-- Prevent scroll initially when doors are closed -->
-  <body class="no-scroll">
-    <!-- Entry Overlay with stampcard.png background split doors -->
-    <div id="entry-overlay" class="entry-overlay">
-      <div class="overlay-card-wrapper">
-        <div class="stamp-half left-flap">
-          <div class="flap-bg"></div>
-        </div>
-        <div class="stamp-half right-flap">
-          <div class="flap-bg"></div>
-        </div>
-        <div class="entry-text-container">
-          <h2 class="invited-text">you're invited</h2>
-          <p class="instruction-text-line">Double tap to open your</p>
-          <p class="instruction-text-line">invitation</p>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Areej & Usman Wedding</title>
+  <!-- Google Fonts for typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Lato:wght@300;400&display=swap"
+    rel="stylesheet">
+</head>
+<!-- Prevent scroll initially when doors are closed -->
+
+<body class="no-scroll">
+  <!-- Entry Overlay with stampcard.png background split doors -->
+  <div id="entry-overlay" class="entry-overlay">
+    <div class="overlay-card-wrapper">
+      <div class="stamp-half left-flap">
+        <div class="flap-bg"></div>
+      </div>
+      <div class="stamp-half right-flap">
+        <div class="flap-bg"></div>
+      </div>
+      <div class="entry-text-container">
+        <h2 class="invited-text">you're invited</h2>
+        <p class="instruction-text-line">Double tap to open your</p>
+        <p class="instruction-text-line">invitation</p>
       </div>
     </div>
+  </div>
 
-    <div id="app" style="opacity: 0; transition: opacity 2s;">
-      <!-- Hero Section -->
-      <section id="hero" class="hero">
-        <div class="hero-content">
-          <p class="blessings-text">with the blessings of Allah</p>
-          <h2 class="parents-names">Badar Zaman & Zabila Badar</h2>
-          <p class="invite-text-line">Cordialy invite you to attend the</p>
-          <p class="invite-text-line">Wedding of their daughter</p>
-          
-          <div class="main-names-container">
-            <h1 class="bride-name">Areej</h1>
-            <p class="with-text">WITH</p>
-            <h1 class="groom-name">Usman</h1>
-          </div>
-          
-          <p class="groom-parents">Son of Ikram ul haq khan and Abida Naaz</p>
-          
-          <div class="scroll-indicator" style="margin-top: 2rem;">
-            <p>Scroll Down</p>
-            <div class="arrow">↓</div>
-          </div>
+  <div id="app" style="opacity: 0; transition: opacity 2s;">
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <p class="blessings-text">with the blessings of Allah</p>
+        <h2 class="parents-names">Badar Zaman & Zabila Badar</h2>
+        <p class="invite-text-line">Cordialy invite you to attend the</p>
+        <p class="invite-text-line">Wedding of their daughter</p>
+
+        <div class="main-names-container">
+          <h1 class="bride-name">Areej</h1>
+          <p class="with-text">WITH</p>
+          <h1 class="groom-name">Usman</h1>
         </div>
-      </section>
 
-      <!-- Curtain & Scratch Card Reveal -->
-      <section id="venue" class="venue-section">
-        <div class="curtain main-left-curtain"></div>
-        <div class="curtain main-right-curtain"></div>
-        <div class="venue-content scratch-section">
-          <p class="surprise-pre-title">with immense joy and love</p>
-          <h2 class="surprise-couple-names">Areej & Usman</h2>
-          <p class="subtitle">Scratch below to reveal our date.</p>
-          <div class="scratch-card-container">
-            <!-- Hidden Date beneath the canvas -->
-            <div class="hidden-date">
-              <h3>The Wedding</h3>
-              <p>12th of August 2026</p>
+        <!-- <p class="groom-parents">Son of Ikram ul haq khan and Abida Naaz</p> -->
+
+        <div class="scroll-indicator" style="margin-top: 2rem;">
+          <p>Scroll Down</p>
+          <div class="arrow">↓</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curtain & Scratch Card Reveal -->
+    <section id="venue" class="venue-section">
+      <div class="curtain main-left-curtain"></div>
+      <div class="curtain main-right-curtain"></div>
+      <div class="venue-content scratch-section">
+        <p class="surprise-pre-title">with immense joy and love</p>
+        <h2 class="surprise-couple-names">Areej & Usman</h2>
+        <p class="subtitle">Scratch below to reveal our date.</p>
+        <div class="scratch-card-container">
+          <!-- Hidden Date beneath the canvas -->
+          <div class="hidden-date">
+            <h3>The Wedding</h3>
+            <p>12th of August 2026</p>
+          </div>
+          <canvas id="scratch-canvas"></canvas>
+        </div>
+
+        <!-- Image 1 below scratch card -->
+        <div class="surprise-image-container">
+          <img src="/image1.png" alt="Areej & Usman" class="surprise-image" />
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-section">
+          <div class="countdown-container">
+            <div class="countdown-box">
+              <span class="countdown-num" id="days">00</span>
+              <span class="countdown-label">days</span>
             </div>
-            <canvas id="scratch-canvas"></canvas>
-          </div>
-          
-          <!-- Image 1 below scratch card -->
-          <div class="surprise-image-container">
-            <img src="/image1.png" alt="Areej & Usman" class="surprise-image" />
-          </div>
-
-          <!-- Countdown Timer -->
-          <div class="countdown-section">
-            <div class="countdown-container">
-              <div class="countdown-box">
-                <span class="countdown-num" id="days">00</span>
-                <span class="countdown-label">days</span>
-              </div>
-              <div class="countdown-box">
-                <span class="countdown-num" id="hours">00</span>
-                <span class="countdown-label">hours</span>
-              </div>
-              <div class="countdown-box">
-                <span class="countdown-num" id="minutes">00</span>
-                <span class="countdown-label">minutes</span>
-              </div>
-              <div class="countdown-box">
-                <span class="countdown-num" id="seconds">00</span>
-                <span class="countdown-label">seconds</span>
-              </div>
+            <div class="countdown-box">
+              <span class="countdown-num" id="hours">00</span>
+              <span class="countdown-label">hours</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-num" id="minutes">00</span>
+              <span class="countdown-label">minutes</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-num" id="seconds">00</span>
+              <span class="countdown-label">seconds</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Mehndi Section -->
-      <section id="mehndi" class="mehndi-section">
-        <div class="mehndi-card">
-          <div class="mehndi-content">
-            <h2 class="mehndi-title">Mehndi</h2>
-            <p class="mehndi-subtitle">A playful morning and cultural festivities</p>
-            <p class="mehndi-day">WED</p>
-            <p class="mehndi-date">11th August 2026</p>
-            <p class="mehndi-time">6pm and onwards</p>
-            <p class="mehndi-address">house address</p>
-          </div>
+    <!-- Mehndi Section -->
+    <section id="mehndi" class="mehndi-section">
+      <div class="mehndi-card">
+        <div class="mehndi-content">
+          <h2 class="mehndi-title">Mehndi</h2>
+          <p class="mehndi-subtitle">A playful morning and cultural festivities</p>
+          <p class="mehndi-day">WED</p>
+          <p class="mehndi-date">11th August 2026</p>
+          <p class="mehndi-time">6pm and onwards</p>
+          <p class="mehndi-address">house address</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="details" class="details-section">
-        <div class="glass-card">
-          <h2>Wedding Celebration</h2>
-          <p class="date-highlight">12th August 2026</p>
-          <div class="divider"></div>
-          <p class="venue-highlight">Grace Marquis</p>
-        </div>
-      </section>
+    <section id="details" class="details-section">
+      <div class="glass-card">
+        <h2>Wedding Celebration</h2>
+        <p class="date-highlight">12th August 2026</p>
+        <div class="divider"></div>
+        <p class="venue-highlight">Grace Marquis</p>
+      </div>
+    </section>
 
-      <!-- Outro Section & Location Link -->
-      <section id="outro" class="outro-section">
-        <div class="outro-content">
-          <h3 class="quote">"You are most welcome to come to our function"</h3>
-          <a href="https://maps.google.com/?q=London" target="_blank" class="location-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin" style="margin-bottom: -4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            Location
-          </a>
-        </div>
-      </section>
-    </div>
-    <script type="module" src="/main.js"></script>
-  </body>
+    <!-- Outro Section & Location Link -->
+    <section id="outro" class="outro-section">
+      <div class="outro-content">
+        <h3 class="quote">"You are most welcome to come to our function"</h3>
+        <a href="https://maps.google.com/?q=London" target="_blank" class="location-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-map-pin" style="margin-bottom: -4px">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Location
+        </a>
+      </div>
+    </section>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
