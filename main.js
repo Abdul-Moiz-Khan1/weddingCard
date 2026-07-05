@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const appContainer = document.getElementById('app');
 
   const enterMainPage = () => {
-    if (entryOverlay.classList.contains('fade-out')) return;
-    entryOverlay.classList.add('fade-out');
+    if (entryOverlay.classList.contains('open')) return;
+    entryOverlay.classList.add('open');
     document.body.classList.remove('no-scroll');
     appContainer.style.opacity = '1';
     
     // Start flower shower animation
     startFlowerShower();
 
-    // Hide overlay completely after fade out to allow interactions
+    // Hide overlay completely after door slides to allow interactions
     setTimeout(() => {
       entryOverlay.style.display = 'none';
     }, 1500);
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   venueObserver.observe(venueSection);
 
   // 3. Scroll Reveal for Cards (Valima + Outro)
-  const revealElements = document.querySelectorAll('.glass-card, .outro-content');
+  const revealElements = document.querySelectorAll('.glass-card, .mehndi-card, .outro-content');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
