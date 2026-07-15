@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.5 });
   venueObserver.observe(venueSection);
 
-  // 3. Scroll Reveal for Cards (Valima + Outro)
-  const revealElements = document.querySelectorAll('.glass-card, .mehndi-card, .outro-content');
+  // 3. Scroll Reveal for Cards (Valima + Families + Outro)
+  const revealElements = document.querySelectorAll('.glass-card, .mehndi-card, .family-card, .outro-content');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -66,6 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.3 });
 
   revealElements.forEach(el => revealObserver.observe(el));
+
+  // 3b. Mehndi Section Yellow Flower Shower Observer
+  const mehndiSection = document.getElementById('mehndi');
+  let hasShowedYellowFlowers = false;
+  const mehndiObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasShowedYellowFlowers) {
+        hasShowedYellowFlowers = true;
+        startYellowFlowerShower();
+      }
+    });
+  }, { threshold: 0.8 });
+  if (mehndiSection) {
+    mehndiObserver.observe(mehndiSection);
+  }
 
   // 4. Scratch Card Logic
   setupScratchCard();
@@ -252,4 +267,47 @@ function initCountdown() {
 
   update();
   const timerInterval = setInterval(update, 1000);
+}
+
+function startYellowFlowerShower() {
+  const container = document.body;
+  const duration = 4000; // spawn for 4 seconds
+  const petalCount = 6; // number of petals to spawn per interval
+  
+  const spawnInterval = setInterval(() => {
+    for (let i = 0; i < petalCount; i++) {
+      const petal = document.createElement('div');
+      petal.className = 'falling-yellow-flower';
+      
+      // Random sizes between 15px and 32px
+      const size = Math.random() * 17 + 15;
+      petal.style.width = `${size}px`;
+      petal.style.height = `${size}px`;
+      
+      // Random starting horizontal position across viewport
+      petal.style.left = `${Math.random() * 100}vw`;
+      
+      // Random animation duration between 2.5s and 5s
+      const animDuration = Math.random() * 2.5 + 2.5;
+      petal.style.animationDuration = `${animDuration}s`;
+      
+      // Random opacity starting state
+      petal.style.opacity = Math.random() * 0.4 + 0.6;
+      
+      // Random initial rotation
+      petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+      
+      container.appendChild(petal);
+      
+      // Remove petal from DOM once it completes falling
+      setTimeout(() => {
+        petal.remove();
+      }, animDuration * 1000);
+    }
+  }, 120);
+
+  // Stop spawning after 4 seconds
+  setTimeout(() => {
+    clearInterval(spawnInterval);
+  }, duration);
 }
